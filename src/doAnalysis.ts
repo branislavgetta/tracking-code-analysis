@@ -50,13 +50,13 @@ const doAnalysis = async () => {
       }
     })
 
-    const existingReview = reviewsResponses.find(({user}) => user!.login === config.reviewerUsername)
+    const existingReview = reviewsResponses.find(({user}) => user!.login === config.reviewerTeamSlug)
     if (!existingReview) {
       await client.request('POST /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers', {
         owner: payload.repository!.owner.login,
         repo: payload.repository!.name,
         pull_number: payload.number,
-        reviewers: [config.reviewerUsername],
+        team_reviewers: [config.reviewerTeamSlug],
         headers: {
           'X-GitHub-Api-Version': '2022-11-28'
         }

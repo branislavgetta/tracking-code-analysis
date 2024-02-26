@@ -30672,7 +30672,7 @@ const external_node_fs_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import
 ;// CONCATENATED MODULE: external "node:path"
 const external_node_path_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:path");
 ;// CONCATENATED MODULE: ./config.json
-const config_namespaceObject = {"B$":"falafeels"};
+const config_namespaceObject = JSON.parse('{"b_":"data-foundation"}');
 ;// CONCATENATED MODULE: ./topTierEntries.json
 const topTierEntries_namespaceObject = JSON.parse('["ticketDetailsCardShown","pdpDetailsPrefillValidated","pdpPageShown","bcpPageShown","srpJourneyDetailsClick","payPageShown","srpPageShown","journeySummaryShown","payButtonClick","srpEarlierLaterButtonClick","paySucceeded","tcpShareIconShown","passengerFormShown","toggleShown","srpNearbyShown","bcpConfirmShown","paymentMethodsShown","ticketReservationSucceeded","pdpDetailsPrefilled","srpSearchResultsShown","pdpConfirmClick","ticketReservationSpinnerShown","appBookingSucceeded","paymentMethodsClick","discountCardFieldShown","srpResultCellClick","SearchContext","GoeuroTrackingIdsContext","SeoLandingPageContext","MobileSystemContext"]');
 ;// CONCATENATED MODULE: ./src/doAnalysis.ts
@@ -30721,13 +30721,13 @@ const doAnalysis = async () => {
                 'X-GitHub-Api-Version': '2022-11-28'
             }
         });
-        const existingReview = reviewsResponses.find(({ user }) => user.login === config_namespaceObject.B$);
+        const existingReview = reviewsResponses.find(({ user }) => user.login === config_namespaceObject.b_);
         if (!existingReview) {
             await client.request('POST /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers', {
                 owner: payload.repository.owner.login,
                 repo: payload.repository.name,
                 pull_number: payload.number,
-                reviewers: [config_namespaceObject.B$],
+                team_reviewers: [config_namespaceObject.b_],
                 headers: {
                     'X-GitHub-Api-Version': '2022-11-28'
                 }
