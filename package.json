@@ -1,0 +1,24 @@
+{
+  "name": "testing_actions",
+  "version": "1.0.0",
+  "main": "src/doAnalysis.ts",
+  "type": "module",
+  "repository": "https://github.com/branislavgetta/testing_actions.git",
+  "author": "BranislavGetta <branislav.getta_ges@omio.com>",
+  "scripts": {
+    "build": "yarn tsc && ncc build src/doAnalysis.ts --license licenses.txt",
+    "cms-update": "node dist/cmsUpdate.js"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.202",
+    "@types/node": "^20.11.20",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@actions/core": "^1.10.1",
+    "@actions/github": "^6.0.0",
+    "@vercel/ncc": "^0.38.1",
+    "axios": "^1.6.7",
+    "lodash": "^4.17.21"
+  }
+}

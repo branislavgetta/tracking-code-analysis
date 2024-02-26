@@ -1,0 +1,12 @@
+name: 'Tracking code analysis script'
+description: 'Checks all edited files compared to PR target, and adds Data foundation as a reviewer if any changed files contain top events implementation'
+inputs:
+  changedFiles:
+    description: 'list of changed files'
+    required: true
+  token:
+    description: 'github token for api'
+    required: true
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
