@@ -30695,7 +30695,7 @@ const doAnalysis = async () => {
                     }
                     for (const event of topTierEntries_namespaceObject) {
                         if (fileString.includes(event)) {
-                            resolve({ fileName, hasTopTierEvent: false });
+                            resolve({ fileName, hasTopTierEvent: true });
                             return;
                         }
                     }

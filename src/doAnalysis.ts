@@ -19,7 +19,7 @@ const doAnalysis = async () => {
           }
           for (const event of topTierEntries) {
             if (fileString.includes(event)) {
-              resolve({fileName, hasTopTierEvent: false})
+              resolve({fileName, hasTopTierEvent: true})
               return
             }
           }
